@@ -101,7 +101,7 @@ if (statsSection) statsObserver.observe(statsSection);
 
 // ===== SCROLL REVEAL =====
 function addRevealClasses() {
-    document.querySelectorAll('.skill-card, .project-card, .about-grid, .contact-grid, .cta-card').forEach(el => {
+    document.querySelectorAll('.skill-card, .project-card, .about-grid, .contact-grid, .cta-card, .testimonial-card').forEach(el => {
         el.classList.add('reveal');
     });
 }

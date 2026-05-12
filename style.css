@@ -196,6 +196,17 @@ img { max-width: 100%; display: block; }
 .footer-icon { width: 16px; height: 16px; color: var(--accent); flex-shrink: 0; }
 .footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding: 20px 0; text-align: center; font-size: 0.85rem; }
 
+/* ===== TESTIMONIALS ===== */
+.testimonials-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+.testimonial-card { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: var(--radius-lg); padding: 32px; transition: var(--transition); }
+.testimonial-card:hover { background: rgba(255,255,255,0.1); transform: translateY(-4px); }
+.testimonial-quote { margin-bottom: 16px; }
+.testimonial-quote i { width: 28px; height: 28px; color: var(--accent); }
+.testimonial-text { font-size: 0.95rem; line-height: 1.8; color: rgba(255,255,255,0.8); margin-bottom: 20px; font-style: italic; }
+.testimonial-author { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 16px; }
+.testimonial-author strong { display: block; color: var(--white); font-family: var(--font-heading); font-size: 0.95rem; margin-bottom: 2px; }
+.testimonial-author span { font-size: 0.82rem; color: var(--accent); }
+
 /* ===== BACK TO TOP ===== */
 .back-to-top { position: fixed; bottom: 24px; right: 24px; width: 48px; height: 48px; background: var(--accent); color: var(--white); border: none; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 999; opacity: 0; transform: translateY(20px); transition: var(--transition); box-shadow: 0 4px 16px rgba(0,195,137,0.3); }
 .back-to-top.visible { opacity: 1; transform: translateY(0); }
@@ -213,7 +224,7 @@ img { max-width: 100%; display: block; }
 
 /* Tablet */
 @media (max-width: 992px) {
-    .skills-grid, .projects-grid { grid-template-columns: repeat(2, 1fr); }
+    .skills-grid, .projects-grid, .testimonials-grid { grid-template-columns: repeat(2, 1fr); }
     .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 24px; }
     .footer-grid { grid-template-columns: 1fr 1fr; }
     .contact-grid { grid-template-columns: 1fr; gap: 40px; }
@@ -259,7 +270,7 @@ img { max-width: 100%; display: block; }
     .about-image-placeholder, .about-image { width: 240px; height: 300px; }
 
     /* Skills & Projects */
-    .skills-grid, .projects-grid { grid-template-columns: 1fr; }
+    .skills-grid, .projects-grid, .testimonials-grid { grid-template-columns: 1fr; }
     .skill-card-img { height: 150px; }
     .project-card-img { height: 170px; }
 
