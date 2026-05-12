@@ -16,7 +16,7 @@ export default async function handler(req, res) {
 
         const data = await resend.emails.send({
             from: 'NexaByte Lead <onboarding@resend.dev>',
-            to: ['manasydv123@gmail.com'], // Ensure you verify this email in Resend
+            to: ['fuckucherry9811@gmail.com'], // Ensure you verify this email in Resend
             subject: `New Inquiry: ${subject || 'Website Form'}`,
             html: `
                 <h3>New message from NexaByte Website</h3>
