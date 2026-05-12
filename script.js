@@ -128,13 +128,39 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 // ===== CONTACT FORM =====
-document.getElementById('contact-form')?.addEventListener('submit', (e) => {
+document.getElementById('contact-form')?.addEventListener('submit', async (e) => {
     e.preventDefault();
     const btn = e.target.querySelector('button[type="submit"]');
     const original = btn.innerHTML;
-    btn.innerHTML = '✓ Message Sent!';
-    btn.style.background = '#00a374';
-    setTimeout(() => { btn.innerHTML = original; btn.style.background = ''; e.target.reset(); }, 3000);
+    btn.innerHTML = 'Sending...';
+    btn.disabled = true;
+
+    const data = {
+        name: document.getElementById('name').value,
+        email: document.getElementById('email').value,
+        subject: document.getElementById('subject').value,
+        message: document.getElementById('message').value
+    };
+
+    try {
+        const response = await fetch('/api/contact', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(data)
+        });
+
+        if (response.ok) {
+            btn.innerHTML = '✓ Message Sent!';
+            btn.style.background = '#00a374';
+            setTimeout(() => { btn.innerHTML = original; btn.style.background = ''; e.target.reset(); btn.disabled = false; }, 3000);
+        } else {
+            throw new Error('Failed to send');
+        }
+    } catch (error) {
+        btn.innerHTML = 'X Send Failed';
+        btn.style.background = '#e74c3c';
+        setTimeout(() => { btn.innerHTML = original; btn.style.background = ''; btn.disabled = false; }, 3000);
+    }
 });
 
 // ===== INIT LUCIDE =====
