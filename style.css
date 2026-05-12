@@ -25,6 +25,12 @@
     --font-body: 'Open Sans', sans-serif;
 }
 
+/* ===== CUSTOM SCROLLBAR ===== */
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: var(--light-gray); }
+::-webkit-scrollbar-thumb { background: var(--dark-2); border-radius: 10px; }
+::-webkit-scrollbar-thumb:hover { background: var(--accent); }
+
 html { scroll-behavior: smooth; scroll-padding-top: 80px; }
 body { font-family: var(--font-body); color: var(--text-body); line-height: 1.7; overflow-x: hidden; background: var(--white); }
 a { text-decoration: none; color: var(--accent); transition: var(--transition); }
